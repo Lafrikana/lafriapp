@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Script from 'next/script'
-import Subscribe from './Subscribe'
 
 export default function Footer(){
     return (
