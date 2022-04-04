@@ -1,5 +1,5 @@
 import path from "path";
-import Link from 'next/Link';
+import Link from 'next/link';
 import { getAllBlogIds } from "./getBlogs";
 import BlogCard from "./BlogCard";
 
