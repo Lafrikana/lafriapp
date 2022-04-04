@@ -94,7 +94,7 @@ export default function Home({ blogs }){
 	return (
 		<Layout env="home">
 			<Head>
-				<title>L'AFRIKANA - Home</title>
+				<title>L&#39;AFRIKANA - Home</title>
 				<meta name="description" content="Lafrikana" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
