@@ -1,0 +1,112 @@
+/* slider dots */
+.slick_slider_dots {
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	z-index: 100;
+}
+.slick_slider_dots ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.slick_slider_dots ul li {
+	list-style-type: none;
+	margin: 0 10px;
+}
+.slick_slider_dots ul li button {
+	background: grey;
+	height: 5px;
+	width: 35px;
+	overflow: hidden;
+	color: transparent;
+	border: none;
+	border-radius: 5px;
+}
+.slick_slider_dots ul li.slick-active button {
+	background: var(--theme-primary);
+	color: var(--theme-secondary);
+}
+  
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	/* padding: 1rem 0; */
+	list-style-type: none;
+}
+.slick-dots button {
+	display: block;
+	padding: 0;
+	border: none;
+	border-radius: 100%;
+	background-color: var(--theme-primary);
+	text-indent: -9999px;
+}
+.slick-prev, .slick-next {
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	color: rgb(35, 35, 35);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* padding: 5px; */
+}
+.slick-prev {
+    left: 20px;
+}
+@media screen and (min-width: 768px) {
+	.slick_slider_dots ul li {
+		margin: 0 18px;
+    }
+    .slick_slider_dots ul li button {
+		background: grey;
+		height: 5px;
+		width: 50px;
+    }
+}
+
+/* end of slider dots */
+
+.button__bar {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 40px;
+    width: 70px;
+    text-align: center;
+  }
+  
+  .button__bar li {
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0;
+  }
+  
+  .button__bar li button {
+    border: none;
+    background: #a53692;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-radius: 7.5px;
+  }
+  
+  .button__bar li.slick-active button {
+    background-color: rgb(8, 255, 140);
+  }
+  
+  .button__bar li button:hover,
+  .button__bar li button:focus {
+    background: rgba(247, 34, 34, 0.8);
+    outline: 0;
+  }
