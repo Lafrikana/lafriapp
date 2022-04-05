@@ -222,7 +222,7 @@ export default function About(){
             </div>
             <br/><br/>
             <section className="mb-20 text-gray-700">
-                <div className="text-center md:max-w-xl lg:max-w-3xl mx-auto" id="about">
+                <div className="text-center md:max-w-xl lg:max-w-3xl mx-auto" id="team">
                     <h3 className="text-3xl font-bold mb-6 text-gray-800">Our Team</h3>
                     <p className="mb-6 pb-2 md:mb-12 md:pb-0">
                         Meet the team behind L&#x27;AFRIKANA
