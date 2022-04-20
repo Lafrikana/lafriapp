@@ -12,7 +12,7 @@ import Layout from 'components/Layout'
 export default function Programs(){
 
     return (
-        <Layout env='programs'>
+        <Layout env='programs' title="Our Programs">
             <div className='content-header relative programs px-5 py-10 md:px-10 mb-16 h-128 flex flex-col justify-start align-center grid content-end'>
                 <div className='text-white relative'>
                     <h1 className='text-5xl relative bf-bottom font-extrabold sm:text-6xl'>Our Programs</h1>

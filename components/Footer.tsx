@@ -117,11 +117,13 @@ export default function Footer(){
                                 </h2>
                                 <ul>
                                     <li className="mb-4 hover:text-white hover:underline dark:hover:text-white transition-colors duration-200">
-                                        <a>
-                                            No. 1613, Kivuli Centre, Kabiria Road, Riruta, Dagoretti
-                                            <br/>
-                                            P.O. Box. 8172-00300, Nairobi
-                                        </a>
+                                        <Link href="/about#office">
+                                            <a>
+                                                No. 1613, Kivuli Centre, Kabiria Road, Riruta, Dagoretti
+                                                <br/>
+                                                P.O. Box. 8172-00300, Nairobi
+                                            </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>

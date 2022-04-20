@@ -8,7 +8,7 @@ import { convertDate } from "components/date";
 
 export default function Program({ frontMatter, readTime, mdxSource }){
     return (
-        <Layout env='programs'>
+        <Layout env='programs' title={frontMatter.title}>
 			<div className='content-header relative programs px-5 py-10 md:px-10 mb-16 h-144 flex flex-col justify-start align-center grid content-end'
 					style={{background: `linear-gradient(rgba(0, 0, 0, 0.8), transparent 30%),
 					linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 30%),

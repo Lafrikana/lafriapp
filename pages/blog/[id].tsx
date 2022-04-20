@@ -10,7 +10,7 @@ import { RecommendedBlogs } from 'components/LatestBlogs';
 
 export default function Blog({ frontMatter, readTime, mdxSource, parsedTime, blogs }){
     return (
-        <Layout env='blog'>
+        <Layout env='blog' title={frontMatter.title}>
 			<div className='content-header relative programs px-5 py-10 md:px-10 mb-16 h-144 flex flex-col justify-start align-center grid content-end'
 					style={{background: `linear-gradient(rgba(0, 0, 0, 0.8), transparent 30%),
 					linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 30%),

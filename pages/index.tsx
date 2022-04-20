@@ -92,13 +92,7 @@ export default function Home({ blogs }){
 	})
 
 	return (
-		<Layout env="home">
-			<Head>
-				<title>L&#39;AFRIKANA - Home</title>
-				<meta name="description" content="Lafrikana" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
+		<Layout env="home" title="L'AFRIKANA - Home">
 			<div className="slide-container">
 				<Slider {...config}>
 					{slides.map((x, i) => {

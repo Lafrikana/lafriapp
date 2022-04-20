@@ -4,13 +4,13 @@ import Layout from 'components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook, faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons'
 import UserCard from 'components/UserCard'
 
 export default function About(){
 
     return (
-        <Layout env="about">
+        <Layout env="about" title="About Us">
             <div className='content-header relative about px-5 py-10 md:px-10 h-128 flex flex-col justify-start align-center grid content-end'>
                 <div className='text-white relative'>
                     <h1 className='text-5xl relative bf-bottom font-extrabold sm:text-6xl'>About Us</h1>
@@ -229,7 +229,7 @@ export default function About(){
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center about-team p-4 max-w-7xl mx-auto bg-grayer-light rounded-md border-2 border-gray-300">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center about-team p-4 max-w-7xl mx-auto bg-grayer-light rounded-md border-2 border-gray-300">
                     <div className="block rounded-lg shadow-lg bg-white">
                         <div className="overflow-hidden rounded-t-lg h-36 bg-primary"></div>
                         <div className="w-56 -mt-28 overflow-hidden border border-2 border-white rounded-full mx-auto bg-white">
@@ -340,6 +340,9 @@ export default function About(){
                     </div>
                 </div>
             </section>
+            <div className="text-center md:max-w-xl lg:max-w-3xl mx-auto" id="office">
+                <h3 className="text-3xl font-bold mb-6 text-gray-800">Our Office</h3>
+            </div>
             <div className='section-map w-full'>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d669.058394524974!2d36.72722889402141!3d-1.2911951664239372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bc59c617de9%3A0xcffee90581fbac5a!2sKabiria%20Rd%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1648706183479!5m2!1sen!2ske"

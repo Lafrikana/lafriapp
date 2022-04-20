@@ -161,7 +161,7 @@ const Menu = (props) => {
                         <div className="w-full justify-between flex items-center">
                             <Link href='/'>
                                 <a className="flex-shrink-0">
-                                    <img className="h-20 w-20 md:h-28 md:w-28 header-logo" src="/assets/icons/lafrikana_transparent.png" alt="L'afrikana"/>
+                                    <img className="h-20 w-20 md:h-28 md:w-28 header-logo" src="/assets/icons/lafrikana_transparent_.png" alt="L'Afrikana"/>
                                 </a>
                             </Link>
                             <div className="hidden md:block">

@@ -41,7 +41,7 @@ export default function LatestBlogs({ blogs }) {
 							// signature: parsedTime
 						}}
 						image={{
-							src: '/assets/icons/lafrikana_solid.png',
+							src: '/assets/icons/lafrikana_solid_.jpg',
 							alt: "L'AFRIKANA"
 						}}
 					/>
@@ -74,7 +74,7 @@ export function RecommendedBlogs({ blogs, exist }) {
 										signature: blog.signature
 									}}
 									image={{
-										src: '/assets/icons/lafrikana_solid.png',
+										src: '/assets/icons/lafrikana_solid_.jpg',
 										alt: "L'AFRIKANA"
 									}}
 								/> )
