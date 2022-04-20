@@ -33,6 +33,12 @@ ul {
   padding-left: 20px !important;
 }
 
+#header ol, #header ul {
+  list-style-type: none !important;
+  margin: unset;
+  padding: 6px !important;
+}
+
 .article-window a {
   color: var(--theme-primary);
 }
