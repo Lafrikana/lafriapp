@@ -13,7 +13,7 @@ export default function ContactUs(){
                 </div>
             </div>
             
-            <div className="relative bg-white dark:bg-gray-800 p-4 max-w-7xl mx-auto">
+            <div className="relative bg-white dark:bg-gray-800 p-4 max-w-7xl mx-auto" id="contact_us">
                 <br/><br/>
                 <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-12 lg:items-center">
                     <div className="lg:col-start-2 md:pl-20">

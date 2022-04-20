@@ -118,7 +118,7 @@ export default function About(){
                     <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-12 lg:items-center">
                         <div className="lg:col-start-0 md:pl-20">
                             <br/><br/>
-                            <h4 className="text-2xl leading-8 font-extrabold text-gray-900 dark:text-white tracking-tight sm:leading-9">
+                            <h4 className="text-2xl leading-8 font-extrabold text-gray-900 dark:text-white tracking-tight sm:leading-9 mb-6">
                                 Our Core Values
                             </h4>
                             <ul className="mt-10">

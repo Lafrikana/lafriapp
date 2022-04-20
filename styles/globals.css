@@ -39,6 +39,19 @@ ul {
   padding: 6px !important;
 }
 
+footer ol, footer ul, #core_values ol, #core_values ul {
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#contact_us ol, #contact_us ul {
+  list-style-type: none !important;
+  margin: 5px;
+  margin-left: 0 !important;
+  padding: 0 !important;
+}
+
 .article-window a {
   color: var(--theme-primary);
 }
