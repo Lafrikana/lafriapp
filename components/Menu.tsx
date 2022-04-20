@@ -91,7 +91,7 @@ const Menu = (props) => {
                 <ul className="relative top-5 w-56 bg-white shadow-md px-2 rounded-md py-2">
                     <li className="p-1.5 my-1.5 relative bg-white width-full text-primary hover:drop-shadow-md hover:text-white rounded-md hover:bg-primary transition ease-in-out duration-600">
                         <Link href='/programs/rebuild'>
-                            <a className="block font-bold text-base cursor-pointer">Re:build</a>
+                            <a className="block font-bold text-base cursor-pointer">Re:Build</a>
                         </Link>
                     </li>
                     <li className="p-1.5 my-1.5 relative bg-white width-full text-primary hover:drop-shadow-md hover:text-white rounded-md hover:bg-primary transition ease-in-out duration-600">
