@@ -219,7 +219,7 @@ export const getStaticProps = async () => {
 
 	return {
 		props: {
-			blogs: blogs.splice(0, 3),
+			blogs: blogs.splice(0, 10),
 		},
 		revalidate: 1,
 	};

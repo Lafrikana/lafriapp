@@ -52,8 +52,8 @@ export default function LatestBlogs({ blogs }) {
 }
 
 export function RecommendedBlogs({ blogs, exist }) {
-	blogs.length > 4 ?
-		blogs = blogs.splice(0, 5)
+	blogs.length > 9 ?
+		blogs = blogs.splice(0, 10)
 	: ''
 	return (
 		<div className="bg-white py-4 max-w-7xl">
