@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import Layout from 'components/Layout';
 import { useRouter } from 'next/router';
-import Login from 'components/login';
+import Login from 'components/Login';
 
 const GalleryManage = ({ hasReadPermission }) => {
 
