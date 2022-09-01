@@ -163,3 +163,9 @@ import { UiFileInputButton } from 'components/UIFileInputButton';
 // };
 
 // export default GalleryManage
+
+export default function _M(){
+    return (
+        <></>
+    )
+}
