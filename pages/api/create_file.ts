@@ -89,7 +89,7 @@ apiRoute.post((req, res) => {
     let file = media.originalname
     let description = data.description
     let type = data.type
-    fs.writeFile(`/content/gallery/${file}.mdx`, GalleryInit(file, type, description), function (err) {
+    fs.writeFile(`content/gallery/${file}.mdx`, GalleryInit(file, type, description), function (err) {
         if (err) return err
         return true
     });
