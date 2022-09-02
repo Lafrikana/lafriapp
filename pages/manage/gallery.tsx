@@ -99,7 +99,8 @@ const GalleryManage = ({ hasReadPermission }) => {
                  else handleMedia(false)
             })
         })
-    }, [gallery_media, upload_progress])
+        console.log(hasReadPermission);
+    }, [gallery_media, upload_progress, hasReadPermission])
 
     const router = useRouter();
 
