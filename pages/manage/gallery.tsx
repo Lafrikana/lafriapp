@@ -9,7 +9,7 @@ import Layout from 'components/Layout';
 import { useRouter } from 'next/router';
 import Login from 'components/Login';
 
-const GalleryManage = ({ hasReadPermission }) => {
+const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
 
     let [gallery_media, updateGalleryMedia] = useState(undefined)
     let [upload_progress, updateUploadProgress] = useState(-1)
@@ -99,8 +99,10 @@ const GalleryManage = ({ hasReadPermission }) => {
                  else handleMedia(false)
             })
         })
-        console.log(hasReadPermission);
-    }, [gallery_media, upload_progress, hasReadPermission])
+        console.log("Permission => " + hasReadPermission);
+        console.log("cookieSrc => " + cookieSrc);
+        console.log("cookieConsts => " + cookieConsts);
+    }, [gallery_media, upload_progress, hasReadPermission, cookieSrc, cookieConsts])
 
     const router = useRouter();
 
