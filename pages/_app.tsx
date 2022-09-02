@@ -33,8 +33,10 @@ MyApp.getInitialProps = async (appContext) => {
     // const base_url = "http://localhost:3005"
     const base_url = ""
     let client_cookies = undefined, client_cookie = undefined;
+    let deb = undefined
     try {
       const res = await axios.post(`${base_url}/api/read_cookie`, {}, config);
+      deb = res.data.cookie
       client_cookies = new Cookies(res.data.cookie)
       client_cookie = client_cookies.get(consts.SiteReadCookie);
     } catch(err){
@@ -45,7 +47,8 @@ MyApp.getInitialProps = async (appContext) => {
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
 
-    appProps.pageProps.cookieSrc = client_cookie
+    appProps.pageProps.cookieSrc = deb
+    // appProps.pageProps.cookieSrc = client_cookie
     appProps.pageProps.cookieConsts = consts.SiteReadPass
 
     if (client_cookie === consts.SiteReadPass) {
