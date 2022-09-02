@@ -21,7 +21,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext);
 
-  if(appContext.router.route == "/manage/gallery" || appContext.router.route == "/manage/blog"){
+  let mg = /manage\/gallery/
+  let mb = /manage\/blog/
+
+  if(mg.test(appContext.router.route) || mb.test(appContext.router.route)){
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
     const password = cookies.get(consts.SiteReadCookie) ?? '';
