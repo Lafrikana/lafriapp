@@ -30,12 +30,13 @@ MyApp.getInitialProps = async (appContext) => {
     const config = {
       headers: appContext.ctx.req ? {cookie: appContext.ctx.req.headers.cookie} : undefined,
     };
-    const base_url = "https://lafrikana.or.ke"
+    // const base_url = "http://localhost:3005"
+    const base_url = ""
     let client_cookies = undefined, client_cookie = undefined;
     try {
       const res = await axios.post(`${base_url}/api/read_cookie`, {}, config);
       client_cookies = new Cookies(res.data.cookie)
-      client_cookie = client_cookies.get(consts.SiteReadCookie) ?? '';
+      client_cookie = client_cookies.get(consts.SiteReadCookie);
     } catch(err){
       console.log(err)
     }
@@ -43,9 +44,8 @@ MyApp.getInitialProps = async (appContext) => {
     console.log(client_cookie)
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
-    const password = cookies.get(consts.SiteReadCookie) ?? '';
 
-    appProps.pageProps.cookieSrc = password
+    appProps.pageProps.cookieSrc = client_cookie
     appProps.pageProps.cookieConsts = consts.SiteReadPass
 
     if (client_cookie === consts.SiteReadPass) {
