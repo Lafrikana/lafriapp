@@ -12,6 +12,7 @@ const apiRoute = nc<NextApiRequest, NextApiResponse>({
 
 apiRoute.post((req, res) => {
     let data = req.headers.cookie
+    console.log(data)
     res.status(200).json({ cookie: data })
 });
 
@@ -19,6 +20,6 @@ export default apiRoute;
 
 export const config = {
 	api: {
-		bodyParser: false,
+		bodyParser: true,
 	},
 };
