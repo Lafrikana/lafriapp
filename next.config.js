@@ -15,6 +15,12 @@ const nextConfig = {
       },
     ]
   },
+  "functions": {
+    "pages/api/read_cookie.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+  }
 }
 
 module.exports = nextConfig
