@@ -23,7 +23,7 @@ MyApp.getInitialProps = async (appContext) => {
 
   let mg = /manage\/gallery/
   let mb = /manage\/blog/
-
+  appProps.pageProps.hasReadPermission = "not yet";
   if(mg.test(appContext.router.route) || mb.test(appContext.router.route)){
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
@@ -31,6 +31,9 @@ MyApp.getInitialProps = async (appContext) => {
 
     if (password === consts.SiteReadPass) {
       appProps.pageProps.hasReadPermission = true;
+    }
+    else {
+      appProps.pageProps.hasReadPermission = false;
     }
   }
 

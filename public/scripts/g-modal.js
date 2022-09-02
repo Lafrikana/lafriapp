@@ -1,5 +1,4 @@
 $(function(){
-    console.log("something here")
     for(var i = 0; i < $('.item-effects').length; i++){
         $(".item-effects").eq(i).on('click', function(){
             var access = $(this).siblings('img');
