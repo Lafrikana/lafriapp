@@ -8,7 +8,7 @@ import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import Layout from 'components/Layout';
 import { useRouter } from 'next/router';
 import Login from 'components/Login';
-import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import { getCookies } from 'cookies-next';
 
 const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
 
@@ -32,7 +32,6 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
         };
         const response = await axios.post('/api/upload_gallery', formData, config);
         updateGalleryMedia(response.data)
-        console.log('response', response.data);
     };
 
     useEffect(() => {
@@ -97,10 +96,10 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
                     .then((response) => {
                         $('#add-gallery').html(response.data.message)
                         setTimeout(() => {
-                            $('#add-gallery').html('Redirecting to Gallery')
+                            $('#add-gallery').html('Reloading to Sync Changes')
                         }, 1000)
                         setTimeout(() => {
-                            window.location.href = "/gallery"
+                            window.location.href = "/manage/gallery"
                         }, 2500)
                     });
                     e.stopImmediatePropagation()
@@ -108,9 +107,6 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
                  else handleMedia(false)
             })
         })
-        console.log("Permission => " + hasReadPermission);
-        console.log("cookieSrc => " + cookieSrc);
-        console.log("cookieConsts => " + cookieConsts);
     }, [gallery_media, upload_progress, hasReadPermission, cookieSrc, cookieConsts])
 
     const router = useRouter();

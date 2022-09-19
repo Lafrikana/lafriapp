@@ -14,17 +14,12 @@ const apiRoute = nc<NextApiRequest, NextApiResponse>({
 })
 
 apiRoute.post((req, res) => {
-    console.log("Testing")
     let data = getCookies({ req, res });
-    console.log("Cookies from Header - API")
-    console.log(data)
     res.status(200).json({ cookie: data })
 });
 
 const vercelRoute = (request: VercelRequest, response: VercelResponse) => {
-    console.log("Testing")
     let data = request.headers.cookie
-    console.log(data)
     response.status(200).json({ cookie: data });
 };
 

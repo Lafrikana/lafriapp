@@ -6,7 +6,7 @@ const Login = ({ redirectPath }) => {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="block p-6 bg-white w-screen h-screen flex content-center justify-center">
+    <div className="block bg-white w-full flex flex-col content-center justify-center">
         <form className='flex flex-col content-center justify-center self-center rounded-lg border-4 border-gray-100 w-144 h-80 shadow-2xl bg-white p-6'>
             <p className='text-center mb-6'>
                 <span className='font-normal text-gray-700'>User: </span>

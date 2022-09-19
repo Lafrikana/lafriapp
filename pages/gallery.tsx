@@ -23,8 +23,8 @@ export default function Gallery({ media }){
             <Head key="gallery-head">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"/>
             </Head>
-            <Script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></Script>
-            <Script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></Script>
+            <Script defer src="/scripts/jquery-2.2.2.min.js"></Script>
+            <Script defer src="/scripts/bootstrap-3.3.6.min.js" type="text/javascript"></Script>
             <div className='content-header relative gallery px-5 py-10 md:px-10 h-128 flex flex-col justify-start align-center grid content-end'>
                 <div className='text-white relative'>
                     <h1 className='text-5xl relative bf-bottom font-extrabold sm:text-6xl'>Our Gallery</h1>
