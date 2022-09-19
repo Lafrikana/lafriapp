@@ -30,8 +30,8 @@ MyApp.getInitialProps = async (appContext) => {
     const config = {
       headers: appContext.ctx.req ? {cookie: appContext.ctx.req.headers.cookie} : undefined,
     };
-    // const base_url = "http://localhost:3005"
-    const base_url = "https://lafrikana.or.ke"
+    const base_url = "http://localhost:3005"
+    // const base_url = "https://lafrikana.or.ke"
     let client_cookies = undefined, client_cookie = undefined;
     let deb = undefined;
     try {

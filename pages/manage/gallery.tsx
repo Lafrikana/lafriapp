@@ -10,11 +10,18 @@ import { useRouter } from 'next/router';
 import Login from 'components/Login';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
-const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts, cookieValues }) => {
+const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
+
+    let cookieValues = getCookies()
+    let cookiePermission = false
+    cookiePermission = cookieValues ?
+        cookieValues.src ?
+            decodeURIComponent(cookieValues.src) == cookieConsts
+        : false
+    : false
 
     let [gallery_media, updateGalleryMedia] = useState(undefined)
     let [upload_progress, updateUploadProgress] = useState(-1)
-    let [cookiePermission, updateCookiePermission] = useState(false)
   
     const onFileChange = async (formData) => {
         const config = {
@@ -104,11 +111,7 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts, cookieValue
         console.log("Permission => " + hasReadPermission);
         console.log("cookieSrc => " + cookieSrc);
         console.log("cookieConsts => " + cookieConsts);
-        updateCookiePermission(cookieValues.src ?
-            cookieValues.src == cookieConsts
-        : false)
-        console.log(cookieValues);
-    }, [gallery_media, upload_progress, hasReadPermission, cookieSrc, cookieConsts, cookieValues, cookiePermission])
+    }, [gallery_media, upload_progress, hasReadPermission, cookieSrc, cookieConsts])
 
     const router = useRouter();
 
@@ -155,15 +158,5 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts, cookieValue
         </Layout>
     );
 };
-
-export const getServerSideProps = ({ req, res }) => {
-    let C = getCookies({ req, res });
-    return {
-        props: {
-            cookieValues: C,
-        }
-    };
-};
-
 
 export default GalleryManage
