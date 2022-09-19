@@ -11,6 +11,7 @@ const apiRoute = nc<NextApiRequest, NextApiResponse>({
 })
 
 apiRoute.post((req, res) => {
+    console.log("Testing")
     let data = req.headers.cookie
     console.log(data)
     res.status(200).json({ cookie: data })
