@@ -2,6 +2,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 const apiRoute = nc<NextApiRequest, NextApiResponse>({
     onError(error, req, res) {
@@ -14,7 +15,8 @@ const apiRoute = nc<NextApiRequest, NextApiResponse>({
 
 apiRoute.post((req, res) => {
     console.log("Testing")
-    let data = req.headers.cookie
+    let data = getCookies({ req, res });
+    console.log("Cookies from Header - API")
     console.log(data)
     res.status(200).json({ cookie: data })
 });
@@ -26,8 +28,8 @@ const vercelRoute = (request: VercelRequest, response: VercelResponse) => {
     response.status(200).json({ cookie: data });
 };
 
-export default vercelRoute;
-// export default apiRoute;
+// export default vercelRoute;
+export default apiRoute;
 
 export const config = {
 	api: {

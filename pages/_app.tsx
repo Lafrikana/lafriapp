@@ -33,7 +33,7 @@ MyApp.getInitialProps = async (appContext) => {
     // const base_url = "http://localhost:3005"
     const base_url = "https://lafrikana.or.ke"
     let client_cookies = undefined, client_cookie = undefined;
-    let deb = undefined
+    let deb = undefined;
     try {
       const res = await axios.post(`${base_url}/api/read_cookie`, {}, config);
       deb = res.data.cookie
@@ -46,6 +46,7 @@ MyApp.getInitialProps = async (appContext) => {
     console.log("Client Cookie")
     console.log(client_cookie)
     console.log(appProps.pageProps.hasReadPermission)
+    console.log(deb)
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
 

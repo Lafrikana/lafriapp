@@ -8,11 +8,13 @@ import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import Layout from 'components/Layout';
 import { useRouter } from 'next/router';
 import Login from 'components/Login';
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
-const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
+const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts, cookieValues }) => {
 
     let [gallery_media, updateGalleryMedia] = useState(undefined)
     let [upload_progress, updateUploadProgress] = useState(-1)
+    let [cookiePermission, updateCookiePermission] = useState(false)
   
     const onFileChange = async (formData) => {
         const config = {
@@ -102,11 +104,16 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
         console.log("Permission => " + hasReadPermission);
         console.log("cookieSrc => " + cookieSrc);
         console.log("cookieConsts => " + cookieConsts);
-    }, [gallery_media, upload_progress, hasReadPermission, cookieSrc, cookieConsts])
+        updateCookiePermission(cookieValues.src ?
+            cookieValues.src == cookieConsts
+        : false)
+        console.log(cookieValues);
+    }, [gallery_media, upload_progress, hasReadPermission, cookieSrc, cookieConsts, cookieValues, cookiePermission])
 
     const router = useRouter();
 
-    if (!hasReadPermission) {
+    console.log(cookiePermission)
+    if (!cookiePermission) {
         return <Login redirectPath={router.asPath} />;
     }
   
@@ -148,5 +155,15 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
         </Layout>
     );
 };
+
+export const getServerSideProps = ({ req, res }) => {
+    let C = getCookies({ req, res });
+    return {
+        props: {
+            cookieValues: C,
+        }
+    };
+};
+
 
 export default GalleryManage
