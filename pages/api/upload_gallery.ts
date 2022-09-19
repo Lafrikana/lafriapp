@@ -15,7 +15,9 @@ let file_name = undefined
 
 const upload = multer({
 	storage: multer.diskStorage({
-		destination: 'public/uploads/gallery',
+		destination: (req, file, cb) => (
+			cb(null, '/public/uploads/gallery')
+		),
 		filename: (req, file, cb) => (
 			file.originalname = `Media_${new Date().getTime()}_${file.originalname}`,
 			cb(null, file.originalname),

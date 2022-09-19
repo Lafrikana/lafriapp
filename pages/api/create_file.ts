@@ -84,7 +84,6 @@ description: "${description}"
 
 apiRoute.post((req, res) => {
     let data = req.body
-    console.log(data)
     let media = JSON.parse(data.media)
     let file = media.originalname
     let description = data.description
