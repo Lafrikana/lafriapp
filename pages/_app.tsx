@@ -43,7 +43,9 @@ MyApp.getInitialProps = async (appContext) => {
       console.log(err)
     }
 
+    console.log("Client Cookie")
     console.log(client_cookie)
+    console.log(appProps.pageProps.hasReadPermission)
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
 

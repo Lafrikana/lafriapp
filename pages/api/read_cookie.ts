@@ -1,5 +1,7 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const apiRoute = nc<NextApiRequest, NextApiResponse>({
     onError(error, req, res) {
@@ -17,7 +19,15 @@ apiRoute.post((req, res) => {
     res.status(200).json({ cookie: data })
 });
 
-export default apiRoute;
+const vercelRoute = (request: VercelRequest, response: VercelResponse) => {
+    console.log("Testing")
+    let data = request.headers.cookie
+    console.log(data)
+    response.status(200).json({ cookie: data });
+};
+
+export default vercelRoute;
+// export default apiRoute;
 
 export const config = {
 	api: {
