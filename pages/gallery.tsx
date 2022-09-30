@@ -7,10 +7,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { getAllGalleryFrontMatter } from 'components/getGallery';
 import GalleryMedia from 'components/GalleryMedia';
+import axios from 'axios';
+import Loading from 'components/Loading';
 
 export default function Gallery({ media }){
 
+    let [readMedia, updateReadMedia] = useState(undefined)
+
+    const readDir = async () => {
+
+        const config = {
+            headers: { 'content-type': 'multipart/form-data' },
+            body: {
+
+            } 
+        };
+
+
+        const response = await axios.post('https://app-media.lafrikana.or.ke/media/read_media.php', {}, config);
+
+        updateReadMedia(response.data)
+
+    };
+
     useEffect(() => {
+        readDir()
         setMounted(true)
     }, [])
 
@@ -38,7 +59,9 @@ export default function Gallery({ media }){
                     </div>
                 </div>
             </div>
-            <GalleryMedia gallery={media}/>
+            {
+                !readMedia ? <Loading/> : <GalleryMedia gallery={readMedia}/>
+            }
             <Script defer type='text/javascript' src='/scripts/g-modal.js'></Script>
         </Layout>
     )

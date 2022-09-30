@@ -9,6 +9,7 @@ import Layout from 'components/Layout';
 import { useRouter } from 'next/router';
 import Login from 'components/Login';
 import { getCookies } from 'cookies-next';
+import Link from 'next/link';
 
 const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
 
@@ -24,14 +25,22 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
     let [upload_progress, updateUploadProgress] = useState(-1)
   
     const onFileChange = async (formData) => {
+        updateUploadProgress(0)
+
         const config = {
             headers: { 'content-type': 'multipart/form-data' },
             onUploadProgress: (event) => {
                 updateUploadProgress( Math.round((event.loaded * 100) / event.total) )
             },
         };
-        const response = await axios.post('/api/upload_gallery', formData, config);
+
+        formData.append("file", "galleryFile");
+        formData.append("mime", "MIME_IMAGE");
+
+        const response = await axios.post('https://app-media.lafrikana.or.ke/upload/index.php', formData, config);
+
         updateGalleryMedia(response.data)
+
     };
 
     useEffect(() => {
@@ -50,58 +59,74 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
             }
             function MediaPlacer(data){
                 let mimetype = data.mimetype
-                let name = data.originalname
+                let name = data.name
                 let img = /image/
                 let vid = /video/
                 let type = vid.test(mimetype) ? "video" : "image"
                 let build = type == "image" ?
-                    `<img src="/uploads/gallery/${name}" class='object-contain h-60 w-auto' alt="${name}"/>`
-                : `<video src="/uploads/gallery/${name}" class='object-contain h-60 w-auto' controls></video>`
+                    `<img src="http://app-media.lafrikana.or.ke/media/${name}" class='object-contain h-60 w-auto' alt="${name}"/>`
+                : `<video src="http://app-media.lafrikana.or.ke/media/${name}" class='object-contain h-60 w-auto' controls></video>`
                 media_input.val(JSON.stringify(data))
                 type_input.val(type)
                 placeholder.html(build)
             }
             gallery_media != undefined ? (
-                MediaPlacer(gallery_media.data)
+                MediaPlacer(gallery_media)
             ) : ''
             if(upload_progress == -1){}
             else {
                 if(upload_progress == 100){
-                    placeholder.html(`<p class='text-3xl text-green-500 font-bold self-center'>100% Complete</p>`)
+                    placeholder.html(`<p class='text-3xl text-green-500 font-bold self-center'>100% Complete</p>
+<p class='text-xl text-gray-600 font-bold self-center'>Fetching File, Please wait...</p>`)
                     setTimeout(() => {
                         gallery_media != undefined ? (
-                            MediaPlacer(gallery_media.data)
+                            MediaPlacer(gallery_media)
                         ) : ''
                     }, 2000)
+                }
+                else if(upload_progress == 0){
+                    placeholder.html(`<p class='text-3xl text-gray-700 font-bold self-center'>0% Uploading...</p>`)
                 }
                 else {
                     placeholder.html(`<p class='text-3xl text-gray-600 self-center font-bold'>${upload_progress}%</p>`)
                 }
             }
+
             const add = $('#add-gallery')
             const form_add = $('#form-add-gallery')
             form_add.on('submit', function(e){
                 e.preventDefault()
                 if(media_input.val() != undefined && media_input.val() != "" ){
-                    let media_data = media_input.val()
+                    let media_data = JSON.parse(media_input.val())
                     let description = $('#description-box').val()
                     let media_type = type_input.val()
                     $('#add-gallery').html('Adding ...')
+
+                    let formData = new FormData();
+                    let config = {
+                        headers: { 'content-type': 'multipart/form-data' },
+                        onUploadProgress: (event) => {
+                            updateUploadProgress( Math.round((event.loaded * 100) / event.total) )
+                        },
+                    };
+            
+                    formData.append("media", media_data.name);
+                    formData.append("type", media_type);
+                    formData.append("description", description);
+            
                     axios
-                    .post('/api/create_file', {
-                        'media': media_data,
-                        'description': description,
-                        'type': media_type
-                    })
+                    .post('https://app-media.lafrikana.or.ke/media/index.php', formData, config)
                     .then((response) => {
-                        $('#add-gallery').html(response.data.message)
+                        console.log(response.data)
+                        response.data === 1 ? $('#add-gallery').html("Added Successfully") : $('#add-gallery').html("Error Adding Media")
                         setTimeout(() => {
                             $('#add-gallery').html('Reloading to Sync Changes')
-                        }, 1000)
+                        }, 1500)
                         setTimeout(() => {
                             window.location.href = "/manage/gallery"
-                        }, 2500)
+                        }, 3000)
                     });
+
                     e.stopImmediatePropagation()
                  }
                  else handleMedia(false)
@@ -119,7 +144,11 @@ const GalleryManage = ({ hasReadPermission, cookieSrc, cookieConsts }) => {
     return (
         <Layout env="manage-gallery" title="Admin Manage | Gallery">
             <div className='p-6 pt-10 flex flex-col align-center content-center w-full max-w-4xl mx-auto'>
-                <h2 className='mb-4 font-bold text-xl text-gray-600'>Add Media to the Gallery</h2>
+                <h2 className='mb-4 font-bold text-xl text-gray-600'>Add Media to the Gallery <span>
+                    <Link href="/gallery">
+                        <a className='pl-4 text-blue-500'>&gt; View gallery</a>
+                    </Link>    
+                </span></h2>
                 <div className='w-full'>
                     <UiFileInputButton
                         label="Upload Image or Video"

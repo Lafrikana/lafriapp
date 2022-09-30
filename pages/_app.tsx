@@ -39,7 +39,7 @@ MyApp.getInitialProps = async (appContext) => {
       client_cookies = new Cookies(res.data.cookie)
       client_cookie = client_cookies.get(consts.SiteReadCookie);
     } catch(err){
-      console.log(err)
+      // console.log(err)
     }
 
     const cookies = new Cookies(appContext.ctx.req.headers.cookie);
