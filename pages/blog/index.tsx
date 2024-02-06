@@ -24,7 +24,7 @@ export default function Blog({ blogs }){
         <Layout env='blog' title="Our Blog">
             <div className='content-header relative blog px-5 py-10 md:px-10 h-128 flex flex-col justify-start align-center grid content-end'>
                 <div className='text-white relative'>
-                    <h1 className='text-5xl relative bf-bottom font-extrabold sm:text-6xl'>Our Blog</h1>
+                    <h1 className='text-5xl relative bf-bottom font-extrabold sm:text-6xl'>Our Blogs</h1>
                 </div>
             </div>
             <LatestBlogs blogs={blogs}/>
