@@ -236,6 +236,17 @@ const Menu = (props) => {
                                             </a>
                                         </Link>
                                     }
+                                     {
+                                        props.env == 'testimonials' ?
+                                            <a className="header-navtextactive text-primary border-b-4 border-primary hover:text-primary-dark dark:hover:text-white pr-3 pl-0.5 py-2 text-md font-bold transition ease-in-out duration-300">
+                                                testimonials
+                                            </a>
+                                        : <Link href='/testimonials'>
+                                            <a className="header-navtext text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-white px-3 py-2 text-sm font-medium transition ease-in-out duration-300">
+                                                testimonials
+                                            </a>
+                                        </Link>
+                                    }
                                 </div>
                             </div>
                         </div>
