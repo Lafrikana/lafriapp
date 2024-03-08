@@ -106,7 +106,7 @@ const Menu = (props) => {
                     </li>
                     <li className="p-1.5 my-1.5 relative bg-white width-full text-primary hover:drop-shadow-md hover:text-white rounded-md hover:bg-primary transition ease-in-out duration-600">
                         <Link href='/programs/go_girl'>
-                            <a className="block font-bold text-base cursor-pointer">Go Girl</a>
+                            <a className="block font-bold text-base cursor-pointer">WOMEN EMPOWERMENT & RLOs CAPACITY-BUILDING</a>
                         </Link>
                     </li>
                     {
