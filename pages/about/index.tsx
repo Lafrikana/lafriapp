@@ -246,10 +246,10 @@ export default function About(){
                     <div className="block rounded-lg shadow-lg bg-white">
                         <div className="overflow-hidden rounded-t-lg h-36 bg-primary"></div>
                         <div className="w-56 -mt-28 overflow-hidden border border-2 border-white rounded-full mx-auto bg-white">
-                            <img src="/assets/members/member_bizo.jpg" alt="Biaba Bizo"/>
+                            <img src="/assets/members/banack.jpg" alt="banack"/>
                         </div>
                             <div className="p-6">
-                            <h4 className="text-2xl font-semibold mb-4">Biaba Bizo</h4>
+                            <h4 className="text-2xl font-semibold mb-4">Banack</h4>
                             <hr />
                             <p className="mt-4">
                                 Programs Coordinator
