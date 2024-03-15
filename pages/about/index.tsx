@@ -287,7 +287,7 @@ export default function About(){
                     <div className="block rounded-lg shadow-lg bg-white">
                         <div className="overflow-hidden rounded-t-lg h-36 bg-primary"></div>
                         <div className="w-56 -mt-28 overflow-hidden border border-2 border-white rounded-full mx-auto bg-white">
-                            <img src="/assets/members/member_aoci.jpg" alt="Sarah Noah"/>
+                            <img src="/assets/members/sarah.jpg" alt="Sarah Noah"/>
                         </div>
                             <div className="p-6">
                             <h4 className="text-2xl font-semibold mb-4">Sarah Noah</h4>
