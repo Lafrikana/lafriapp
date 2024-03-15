@@ -280,17 +280,18 @@ export default function About(){
                             <hr />
                             <p className="mt-4">
                                 <i className='fas fa-role'/>
-                                Treasurer
+                                Procurement Officer
                             </p>
                         </div>
                     </div>
                     <div className="block rounded-lg shadow-lg bg-white">
                         <div className="overflow-hidden rounded-t-lg h-36 bg-primary"></div>
                         <div className="w-56 -mt-28 overflow-hidden border border-2 border-white rounded-full mx-auto bg-white">
-                            <img src="/assets/members/member_aoci.jpg" alt="Aoci Soren"/>
+                            <img src="/assets/members/member_aoci.jpg" alt="Sarah Noah"/>
                         </div>
                             <div className="p-6">
-                            <h4 className="text-2xl font-semibold mb-4">Aoci Soren</h4>
+                            <h4 className="text-2xl font-semibold mb-4">Sarah Noah</h4>
+                            <h5 className="text-2xl font-semibold mb-4">WUSC volunteer</h5>
                             <hr />
                             <p className="mt-4">
                                 Monitoring and Evaluation Officer
@@ -300,13 +301,13 @@ export default function About(){
                     <div className="block rounded-lg shadow-lg bg-white">
                         <div className="overflow-hidden rounded-t-lg h-36 bg-primary"></div>
                         <div className="w-56 -mt-28 overflow-hidden border border-2 border-white rounded-full mx-auto bg-white">
-                            <img src="/assets/members/member-sheila.jpeg" alt="Dorothy Sheila"/>
+                            <img src="/assets/members/alex.jpeg" alt="Alex Osogo Mesa"/>
                         </div>
                             <div className="p-6">
-                            <h4 className="text-2xl font-semibold mb-4">Dorothy Sheila</h4>
+                            <h4 className="text-2xl font-semibold mb-4">Alex Osogo Mesa</h4>
                             <hr />
                             <p className="mt-4">
-                                Procurement Officer/Finance Assistant
+                                Marketing Officer
                             </p>
                         </div>
                     </div>
@@ -320,7 +321,7 @@ export default function About(){
                             <hr />
                             <p className="mt-4">
                                 <i className='fas fa-role'/>
-                                Human Resource Assistant
+                                Assistant Finance
                             </p>
                         </div>
                     </div>
